@@ -35,7 +35,7 @@ export default class Simulation {
 
   done() {
     console.log("Done")
-    this.actors.sort((a, b) => { b.wealth - a.wealth })
+    this.actors = this.actors.sort((a, b) => { b.wealth - a.wealth })
     this.isRunning = false
     console.log(this.actors)
     if (this.onComplete) {
