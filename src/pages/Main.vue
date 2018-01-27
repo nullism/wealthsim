@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-text>
-        <v-btn color="primary" @click="start">Run {{ cyclesDone }} / {{ conf.cycleCount }}</v-btn>
+        <v-btn color="primary" @click="start" :disabled="isRunning">Run {{ cyclesDone }} / {{ conf.cycleCount }}</v-btn>
         Poorest Person: ${{sim.poorestActor}}
         Richest Person: ${{sim.richestActor}}
       </v-card-text>
@@ -43,6 +43,7 @@
         },
         sim: {},
         cyclesDone: 0,
+        isRunning: false,
       }
 
     },
@@ -55,9 +56,11 @@
       start() {
         this.sim = new Simulation(this.conf, this.done, this.progress)
         this.sim.start()
+        this.isRunning = true
       },
       done() {
         console.log("Got done in Main")
+        this.isRunning = false
       },
       progress(cycle) {
         this.cyclesDone = cycle
