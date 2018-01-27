@@ -1,5 +1,5 @@
 <template>
-  <v-app id="wealthsim">
+
     <v-expansion-panel expand>
       <v-expansion-panel-content>
         <div slot="header">Basic Settings</div>
@@ -12,7 +12,7 @@
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
-  </v-app>
+
 </template>
 
 <script>
