@@ -34,8 +34,8 @@ export default class Simulation {
     this.isRunning = false
     console.log("Done")
     console.log(this.actors)
-    if (this.onComplete) {
-      this.onComplete()
+    if (this.conf.onComplete) {
+      this.conf.onComplete()
     }
   }
 
