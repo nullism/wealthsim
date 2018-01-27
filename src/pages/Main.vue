@@ -40,7 +40,6 @@
           spendAmount: 1,
           companyChance: 0.0,
           redistribution: 0.0,
-          onComplete: this.done,
         },
         sim: {},
       }
@@ -53,11 +52,14 @@
     },
     methods: {
       start() {
-        this.sim = new Simulation(this.conf)
+        this.sim = new Simulation(this.conf, this.done, this.progress)
         this.sim.start()
       },
       done() {
         console.log("Got done in Main")
+      },
+      progress(pct) {
+        console.log(`${pct}% done`)
       }
     },
     components: {

@@ -1,8 +1,10 @@
 export default class Simulation {
-  constructor(conf) {
+  constructor(conf, onComplete, onProgress) {
     this.conf = conf
     this.actors = []
     this.isRunning = false
+    this.onComplete = onComplete
+    this.onProgress = onProgress
     this.setup()
   }
 
@@ -30,12 +32,15 @@ export default class Simulation {
     this.isRunning = true
     for (let i = 0; i < this.conf.cycleCount; i++) {
       this.doCycle(i)
+      if (this.onProgress && i % 1000 === 0) {
+        this.onProgress(i / this.conf.cycleCount)
+      }
     }
     this.isRunning = false
     console.log("Done")
     console.log(this.actors)
-    if (this.conf.onComplete) {
-      this.conf.onComplete()
+    if (this.onComplete) {
+      this.onComplete()
     }
   }
 
