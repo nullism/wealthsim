@@ -2,7 +2,7 @@
   <div>
     <v-card>
       <v-card-text>
-        <v-btn color="primary" v-click="start">Run</v-btn>
+        <v-btn color="primary" @click="start">Run</v-btn>
         Poorest Person: ${{sim.poorestActor}}
         Richest Person: ${{sim.richestActor}}
       </v-card-text>
