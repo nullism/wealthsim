@@ -10,7 +10,7 @@ Vue.use(VueRouter)
 Vue.use(Vuetify)
 
 const routes = [
-  { path: "/#/", component: Main }
+  { path: "/", component: Main }
 ]
 
 const router = new VueRouter({ routes })
