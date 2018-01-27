@@ -3,7 +3,7 @@ export default class Simulation {
     this.conf = conf
     this.actors = []
     this.isRunning = false
-    setup()
+    this.setup()
   }
 
   setup() {
@@ -28,7 +28,7 @@ export default class Simulation {
     console.log("Starting...")
     this.isRunning = true
     for (let i = 0; i < this.conf.cycleCount; i++) {
-      doCycle(i)
+      this.doCycle(i)
     }
     this.isRunning = false
     console.log("Done")
