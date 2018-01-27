@@ -31,20 +31,15 @@ export default class Simulation {
     console.log("Starting...")
     this.isRunning = true
     this.doCycleTimeout(0)
-    /*
-    for (let i = 0; i < this.conf.cycleCount; i++) {
-      this.doCycle(i)
-      if (this.onProgress && i % 1000 === 0) {
-        this.onProgress(i)
-      }
-    }
-    this.isRunning = false
+  }
+
+  done() {
     console.log("Done")
-    console.log(this.actors)
+    actors.sort((a, b) => { a.wealth - b.wealth })
+    this.isRunning = false
     if (this.onComplete) {
       this.onComplete()
     }
-    */
   }
 
   doCycleTimeout(n) {
@@ -57,11 +52,7 @@ export default class Simulation {
       this.onProgress(n)
     }
     if (n >= this.conf.cycleCount) {
-      console.log("Done")
-      this.isRunning = false
-      if (this.onComplete) {
-        this.onComplete()
-      }
+      this.done()
       return
     }
     setTimeout(() => {

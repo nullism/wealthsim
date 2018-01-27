@@ -4,8 +4,8 @@
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
         Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}<br>
-        Poorest Person: ${{sim.poorestActor}}
-        Richest Person: ${{sim.richestActor}}
+        Poorest Person: ${{getPoorestWealth()}}
+        Richest Person: ${{getRichestWealth()}}
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
@@ -48,11 +48,6 @@
       }
 
     },
-    computed: {
-      res() {
-        return {}
-      }
-    },
     methods: {
       start() {
         this.sim = new Simulation(this.conf, this.done, this.progress)
@@ -65,7 +60,19 @@
       },
       progress(cycle) {
         this.cyclesDone = cycle
-      }
+      },
+      getRichestWealth() {
+        if (this.sim.actors) {
+          return this.sim.actors[this.sim.actors.length-1].wealth
+        }
+        return 0
+      },
+      getPoorestWealth() {
+        if (this.sim.actors) {
+          return this.sim.actors[0].wealth
+        }
+        return 0
+      },
     },
     components: {
     }
