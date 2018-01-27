@@ -49,7 +49,10 @@ export default class Simulation {
 
   doCycleTimeout(n) {
 
-    this.doCycle(n)
+    for (let i = 0; i < 10; i++) {
+      this.doCycle(n+i)
+    }
+
     if (n % 1000 === 0 && this.onProgress) {
       this.onProgress(n)
     }
@@ -62,7 +65,7 @@ export default class Simulation {
       return
     }
     setTimeout(() => {
-      this.doCycleTimeout(n+1)
+      this.doCycleTimeout(n+10)
     }, 1)
   }
 
