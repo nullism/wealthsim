@@ -36,6 +36,10 @@
           actorCount: 100,
           totalWealth: 10000,
           cycleCount: 10000,
+          investPct: 0.0,
+          spendAmount: 1,
+          companyChance: 0.0,
+          redistribution: 0.0,
         },
         sim: {},
       }
