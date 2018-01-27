@@ -62,13 +62,13 @@
         this.cyclesDone = cycle
       },
       getRichestWealth() {
-        if (this.sim.actors) {
+        if (this.sim.actors && !this.isRunning) {
           return this.sim.actors[this.sim.actors.length-1].wealth
         }
         return 0
       },
       getPoorestWealth() {
-        if (this.sim.actors) {
+        if (this.sim.actors && !this.isRunning) {
           return this.sim.actors[0].wealth
         }
         return 0

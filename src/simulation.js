@@ -35,7 +35,7 @@ export default class Simulation {
 
   done() {
     console.log("Done")
-
+    this.actors.sort((a, b) => { a.wealth - b.wealth })
     this.isRunning = false
     if (this.onComplete) {
       this.onComplete()
@@ -49,7 +49,7 @@ export default class Simulation {
     }
 
     if (n % 100 === 0) {
-      this.actors.sort((a, b) => { a.wealth - b.wealth })
+
       if (this.onProgress) this.onProgress(n)
     }
     if (n >= this.conf.cycleCount) {
