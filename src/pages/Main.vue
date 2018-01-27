@@ -48,7 +48,7 @@
     },
     methods: {
       start() {
-        this.sim = Simulation(this.conf)
+        this.sim = new Simulation(this.conf)
         this.sim.start()
       },
     },
