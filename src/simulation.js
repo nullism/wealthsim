@@ -53,7 +53,7 @@ export default class Simulation {
       this.doCycle(n+i)
     }
 
-    if (n % 1000 === 0 && this.onProgress) {
+    if (n % 100 === 0 && this.onProgress) {
       this.onProgress(n)
     }
     if (n >= this.conf.cycleCount) {
