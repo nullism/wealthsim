@@ -6,6 +6,7 @@ import Main from "./pages/Main.vue"
 import VueRouter from "vue-router"
 
 Vue.use(VueResource)
+Vue.use(VueRouter)
 Vue.use(Vuetify)
 
 const routes = [
