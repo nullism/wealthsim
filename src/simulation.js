@@ -30,6 +30,8 @@ export default class Simulation {
   start() {
     console.log("Starting...")
     this.isRunning = true
+    this.doCycleTimeout(0)
+    /*
     for (let i = 0; i < this.conf.cycleCount; i++) {
       this.doCycle(i)
       if (this.onProgress && i % 1000 === 0) {
@@ -42,6 +44,26 @@ export default class Simulation {
     if (this.onComplete) {
       this.onComplete()
     }
+    */
+  }
+
+  doCycleTimeout(n) {
+
+    this.doCycle(n)
+    if (n % 1000 === 0 && this.onProgress) {
+      this.onProgress(n)
+    }
+    if (n >= this.conf.cycleCount) {
+      console.log("Done")
+      this.isRunning = false
+      if (this.onComplete) {
+        this.onComplete()
+      }
+      return
+    }
+    setTimeout(() => {
+      this.doCycleTimeout(n+1)
+    }, 1)
   }
 
   doCycle(n) {
