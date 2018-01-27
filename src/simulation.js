@@ -33,7 +33,7 @@ export default class Simulation {
     for (let i = 0; i < this.conf.cycleCount; i++) {
       this.doCycle(i)
       if (this.onProgress && i % 1000 === 0) {
-        this.onProgress(i / this.conf.cycleCount)
+        this.onProgress(i)
       }
     }
     this.isRunning = false

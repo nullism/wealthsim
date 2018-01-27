@@ -58,8 +58,8 @@
       done() {
         console.log("Got done in Main")
       },
-      progress(pct) {
-        console.log(`${pct}% done`)
+      progress(cycle) {
+        console.log(`${cycle} cycles done`)
       }
     },
     components: {
