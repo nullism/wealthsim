@@ -1,0 +1,34 @@
+{
+  "name": "wealthsim",
+  "version": "1.0.0",
+  "description": "Experimental economy simulation",
+  "main": "main.js",
+  "dependencies": {
+    "babel-polyfill": "^6.26.0",
+    "css-loader": "^0.28.9",
+    "json-loader": "^0.5.7",
+    "vue": "^2.5.13",
+    "vue-resource": "^1.3.5",
+    "vue-router": "^3.0.1",
+    "vuetify": "^0.17.6",
+    "vuex": "^3.0.1",
+    "webpack": "^3.10.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "presets": [
+    "env"
+  ],
+  "author": "Aaron Meier",
+  "license": "MIT",
+  "devDependencies": {
+    "babel-cli": "^6.26.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-env": "^1.6.1",
+    "vue-loader": "^13.7.0",
+    "vue-template-compiler": "^2.5.13",
+    "webpack": "^3.10.0"
+  }
+}
