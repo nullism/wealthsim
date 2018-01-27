@@ -27,13 +27,14 @@
 </template>
 
 <script>
-
+  import Simulation from "../simulation.js"
   export default {
     data() {
       return {
         sim: {
           actorCount: 100,
           totalWealth: 10000,
+          cycleCount: 10000,
         },
       }
 
@@ -42,6 +43,11 @@
       res() {
         return {}
       }
+    },
+    methods: {
+      start() {
+
+      },
     },
     components: {
     }
