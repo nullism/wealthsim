@@ -60,7 +60,7 @@
         console.log("Got done in Main")
       },
       progress(cycle) {
-        console.log(`${cycle} cycles done`)
+        this.cyclesDone = cycle
       }
     },
     components: {
