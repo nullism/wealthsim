@@ -11,7 +11,7 @@
         </v-card-text>
         <v-subheader>Total Wealth</v-subheader>
         <v-card-text>
-          <v-slider v-model="sim.totalWealth" thumb-label step="1000" min="100" max="10000" ticks></v-slider>
+          <v-slider v-model="sim.totalWealth" thumb-label step="1000" min="1000" max="10000" ticks></v-slider>
           The total amount of wealth within the economy. Since it's a closed economy, wealth can never be more than this amount.
         </v-card-text>
       </v-card>
