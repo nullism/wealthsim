@@ -9,7 +9,7 @@ Vue.use(VueResource)
 Vue.use(Vuetify)
 
 const routes = [
-  { path: "/run", component: Main }
+  { path: "/#/", component: Main }
 ]
 
 const router = new VueRouter({ routes })
