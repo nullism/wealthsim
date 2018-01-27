@@ -15,9 +15,7 @@ const routes = [
 const router = new VueRouter({ routes })
 
 new Vue({
-  data: {
-  },
-  router,
   el: "#app",
+  router
 })
 
