@@ -2,7 +2,8 @@
   <div>
     <v-card>
       <v-card-text>
-        <v-btn color="primary" @click="start" :disabled="isRunning">Run {{ cyclesDone }} / {{ conf.cycleCount }}</v-btn>
+        <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
+        Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}<br>
         Poorest Person: ${{sim.poorestActor}}
         Richest Person: ${{sim.richestActor}}
       </v-card-text>
