@@ -2,8 +2,8 @@
   <div>
     <v-card>
       <v-card-text>
-        Poorest Person: ${{res.poorestActor}}
-        Richest Person: ${{res.richestActor}}
+        Poorest Person: ${{sim.poorestActor}}
+        Richest Person: ${{sim.richestActor}}
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
@@ -12,12 +12,12 @@
         <v-card>
           <v-subheader>Number of People</v-subheader>
           <v-card-text>
-            <v-slider v-model="sim.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
+            <v-slider v-model="conf.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
             This determines the number of people participating in the simulated economy. More people takes longer to simulate.
           </v-card-text>
           <v-subheader>Total Wealth</v-subheader>
           <v-card-text>
-            <v-slider v-model="sim.totalWealth" thumb-label step="1000" min="1000" max="10000" ticks></v-slider>
+            <v-slider v-model="conf.totalWealth" thumb-label step="1000" min="1000" max="10000" ticks></v-slider>
             The total amount of wealth within the economy. Since it's a closed economy, wealth can never be more than this amount.
           </v-card-text>
         </v-card>
@@ -31,11 +31,12 @@
   export default {
     data() {
       return {
-        sim: {
+        conf: {
           actorCount: 100,
           totalWealth: 10000,
           cycleCount: 10000,
         },
+        sim: {},
       }
 
     },
@@ -46,7 +47,8 @@
     },
     methods: {
       start() {
-
+        this.sim = Simulation(this.conf)
+        this.sim.start()
       },
     },
     components: {
