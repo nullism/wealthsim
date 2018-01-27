@@ -1,0 +1,9 @@
+/dist/js/*
+/node_modules/*
+**/*.pyc
+**/*.swp
+**/settings.json
+**/localconfig.py
+testdb.db
+server.out
+.vscode/settings.json
