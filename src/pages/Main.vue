@@ -134,6 +134,7 @@
       },
       done() {
         console.log("Got done in Main")
+        this.chartGap5050Data.datasets[0].data = [20, 80]
         this.isRunning = false
       },
       progress(cycle) {
