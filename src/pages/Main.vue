@@ -9,19 +9,18 @@
     </v-card>
     <v-expansion-panel expand>
       <v-expansion-panel-content>
-        <div slot="header">Basic Settings</div>
+        <div slot="header"><b>Basic Settings</b></div>
         <v-card>
           <v-card-text>
             <v-select v-bind:items="[10, 25, 50, 75, 100]" v-model="conf.actorCount" label="Number of People"
-            hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate. This determines the number of people participating in the simulated economy. More people takes longer to simulate."
-            persistent-hint></v-select>
+              hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate."
+              persistent-hint></v-select>
           </v-card-text>
 
           <v-card-text>
             <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person"
-            hint="The amount of money each person starts with by default."
-            persistent-hint
-            ></v-select>
+              hint="The amount of money each person starts with by default."
+              persistent-hint></v-select>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
