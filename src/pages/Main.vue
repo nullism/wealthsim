@@ -74,10 +74,12 @@
 <script>
   import Simulation from "../simulation.js"
   import * as util from "../util.js"
+  import Pie from "vue-chartjs"
 
   export default {
     data() {
       return {
+        pie505: new Pie(),
         conf: {
           actorCount: 50,
           startWealth: 100,
