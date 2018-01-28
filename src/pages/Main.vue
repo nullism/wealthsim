@@ -115,11 +115,11 @@
           { t: "Large (25%)", v: 0.25 },
         ],
         chartGap5050Data: {
-          labels: ["Bottom 90%", "Top 10%"],
+          labels: ["Bottom 50%", "Top 50%"],
           datasets: [
             {
               label: "Initial",
-              data: [90, 10],
+              data: [50, 50],
               backgroundColor: [
                 "#2af",
                 "#faa",
@@ -140,8 +140,8 @@
         console.log("Got done in Main")
 
         this.chartGap5050Data.datasets[0].data = [
-          this.sim.getBottomWealth(0.9),
-          this.sim.getTopWealth(0.1),
+          this.sim.getBottomWealth(0.5),
+          this.sim.getTopWealth(0.5),
         ]
         this.$refs.chartGap5050.update()
         this.isRunning = false
