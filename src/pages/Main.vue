@@ -12,6 +12,10 @@
             <pie-chart :chart-data="chartGap5050Data" :options="chartOptions"></pie-chart>
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
+            <h3>Richest and Poorest Person</h3>
+            <bar-chart :chart-data="chartPoorestRichestData" :options="chartOptions"></bar-chart>
+          </v-flex>
+          <v-flex xs12 sm6 md4 lg3>
             <h3>Wealth By Person</h3>
             <bar-chart :chart-data="chartActorsData" :options="chartOptions"></bar-chart>
           </v-flex>
@@ -150,6 +154,16 @@
             }
           ]
         },
+        chartPoorestRichestData: {
+          labels: ["Poorest", "Richest"],
+          datasets: [
+            {
+              label: "Wealth",
+              data: [100, 100],
+              backgroundColor: "#f55",
+            }
+          ]
+        },
         chartOptions: {
           responsive: true,
         },
@@ -185,6 +199,14 @@
         copy.labels = this.sim.actors.map((a) => a.id)
         console.log(copy.datasets[0].data)
         this.chartActorsData = copy
+
+        // Richest and Poorest Person Chart
+        copy = Object.assign({}, this.chartPoorestRichestData)
+        copy.datasets[0].data = [
+          this.getPoorestWealth(),
+          this.getRichestWealth()
+        ]
+        this.chartPoorestRichestData = copy
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
