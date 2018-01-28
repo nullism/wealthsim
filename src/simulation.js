@@ -1,4 +1,4 @@
-import * as utils from "utils.js"
+import * as util from "util.js"
 
 export default class Simulation {
   constructor(conf, onComplete, onProgress) {
@@ -38,7 +38,7 @@ export default class Simulation {
   done() {
     console.log("Done")
     for (let actor of this.actors) {
-      actor.wealth = utils.precisionRound(actor.wealth, 2)
+      actor.wealth = util.precisionRound(actor.wealth, 2)
     }
     this.actors.sort((a, b) => a.wealth - b.wealth)
     this.isRunning = false
