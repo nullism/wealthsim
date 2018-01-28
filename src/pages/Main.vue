@@ -6,9 +6,11 @@
         <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
         <br> Poorest Person: ${{getPoorestWealth()}}
         <br> Richest Person: ${{getRichestWealth()}}
-        <div style="max-width: 400px">
-          <pie-chart :chart-data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
-        </div>
+        <v-layout row wrap>
+          <v-flex xs12 md6 lg4>
+            <pie-chart :chart-data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
+          </v-flex>
+        </v-layout>
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
