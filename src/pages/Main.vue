@@ -196,7 +196,7 @@
         // Per Actor Chart
         copy = Object.assign({}, this.chartActorsData)
         copy.datasets[0].data = this.sim.actors.map((a) => a.wealth)
-        copy.labels = this.sim.actors.map((a) => a.id)
+        copy.labels = this.sim.actors.map((a) => "#" + a.id)
         this.chartActorsData = copy
 
         // Richest and Poorest Person Chart
