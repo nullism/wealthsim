@@ -9,7 +9,7 @@ export default class Simulation {
   }
 
   setup() {
-    const wealth = this.conf.totalWealth / this.conf.actorCount
+    const wealth = this.conf.startWealth
     this.totalShares = this.conf.actorCount * 10
     this.boughtShares = 0
     this.sharePrice = 0
@@ -82,7 +82,7 @@ export default class Simulation {
 
     this.sharePrice = (
       (this.boughtShares / this.totalShares) *
-      (this.conf.totalWealth / this.conf.actorCount)
+      this.conf.startWealth
     )
     let sharesLeft = this.totalShares - this.boughtShares
     let investable = actor.wealth * this.conf.investPct

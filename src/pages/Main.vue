@@ -17,10 +17,10 @@
             <v-slider v-model="conf.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
             This determines the number of people participating in the simulated economy. More people takes longer to simulate.
           </v-card-text>
-          <v-subheader>Total Wealth</v-subheader>
+          <v-subheader>Wealth Per Person</v-subheader>
           <v-card-text>
-            <v-slider v-model="conf.totalWealth" thumb-label step="1000" min="1000" max="10000" ticks></v-slider>
-            The total amount of wealth within the economy. Since it's a closed economy, wealth can never be more than this amount.
+            <v-slider v-model="conf.startWealth" thumb-label step="10" min="10" max="200" ticks></v-slider>
+            The amount of money each person starts with by default.
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
@@ -35,7 +35,7 @@
       return {
         conf: {
           actorCount: 100,
-          totalWealth: 10000,
+          startWealth: 100,
           cycleCount: 10000,
           investPct: 0.0,
           spendAmount: 1,
