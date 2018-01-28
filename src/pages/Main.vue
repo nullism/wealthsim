@@ -143,7 +143,7 @@
       },
       done() {
         console.log("Got done in Main")
-        let copy = this.chartGap5050Data.update({})
+        let copy = Object.assign({}, chartGap5050Data)
 
         copy.datasets[0].data = [
           this.sim.getBottomWealth(0.5),
