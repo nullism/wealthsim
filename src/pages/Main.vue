@@ -121,7 +121,7 @@
               label: "Initial",
               data: [90, 10],
               backgroundColor: [
-                "#22f",
+                "#2af",
                 "#faa",
               ]
             }
