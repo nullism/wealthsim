@@ -4,8 +4,7 @@
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
         <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
-        <br> Poorest Person: ${{getPoorestWealth()}}
-        <br> Richest Person: ${{getRichestWealth()}}
+        <v-progress-linear v-model="runProgress"></v-progress-linear>
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Share</h3>
@@ -113,6 +112,7 @@
         sim: {},
         cyclesDone: 0,
         isRunning: false,
+        runProgress: 100,
         investPctItems: [
           { t: "Off", v: 0 },
           { t: "Tiny (1%)", v: 0.01 },
