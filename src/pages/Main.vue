@@ -36,6 +36,14 @@
         <v-expansion-panel-content>
           <div slot="header"><b>Advanced Settings</b></div>
           <v-card>
+
+            <v-card-text>
+                <v-select v-bind:items="investPctItems"
+                  item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
+                  hint="The percentage of each person's wealth that is redistributed among all people each cycle."
+                  persistent-hint></v-select>
+              </v-card-text>
+
             <v-card-text>
               <v-select v-bind:items="investPctItems"
                 item-value="v" item-text="t" v-model="conf.investPct" label="Investment Percent"
