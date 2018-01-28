@@ -138,6 +138,7 @@
           ]
         },
         chartActorsData: {
+          labels: [],
           datasets: [
             {
               label: "Wealth By Person",
@@ -176,10 +177,11 @@
         this.chartGap5050Data = copy
 
         // Per Actor Chart
-        let copy2 = Object.assign({}, this.chartActorsData)
-        copy2.datasets[0].data = this.sim.actors.map((a) => a.wealth)
-        console.log(copy2.datasets[0].data)
-        this.chartActorsData = copy2
+        copy = Object.assign({}, this.chartActorsData)
+        copy.datasets[0].data = this.sim.actors.map((a) => a.wealth)
+        copy.labels = this.sim.actors.map((a) => a.id)
+        console.log(copy.datasets[0].data)
+        this.chartActorsData = copy
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
