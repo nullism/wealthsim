@@ -4,7 +4,7 @@ import Vuetify from "vuetify"
 import VueResource from "vue-resource"
 import Main from "./pages/Main.vue"
 import VueRouter from "vue-router"
-import "./node_modules/vuetify/dist/vuetify.min.css"
+import "../node_modules/vuetify/dist/vuetify.min.css"
 
 Vue.use(VueResource)
 Vue.use(VueRouter)
