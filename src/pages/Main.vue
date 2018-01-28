@@ -13,7 +13,7 @@
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Richest and Poorest Person</h3>
-            <bar-chart :chart-data="chartPoorestRichestData" :options="chartOptions"></bar-chart>
+            <bar-chart :chart-data="chartPRData" :options="chartOptions"></bar-chart>
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Wealth By Person</h3>
@@ -154,7 +154,7 @@
             }
           ]
         },
-        chartPoorestRichestData: {
+        chartPRData: {
           labels: ["Poorest", "Richest"],
           datasets: [
             {
@@ -201,13 +201,14 @@
         this.chartActorsData = copy
 
         // Richest and Poorest Person Chart
-        copy = Object.assign({}, this.chartPoorestRichestData)
+        console.log(this.chartPRData)
+        copy = Object.assign({}, this.chartPRData)
         copy.datasets[0].data = [
           this.getPoorestWealth(),
           this.getRichestWealth()
         ]
 
-        this.chartPoorestRichestData = copy
+        this.chartPRData = copy
         console.log(copy)
       },
       getRichestWealth() {
