@@ -6,7 +6,7 @@
         <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
         <br> Poorest Person: ${{getPoorestWealth()}}
         <br> Richest Person: ${{getRichestWealth()}}
-        <pie-chart :data="chartGap5050Data"></pie-chart>
+        <pie-chart :data="chartGap5050Data" ref="chartGap5050"></pie-chart>
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
@@ -135,6 +135,7 @@
       done() {
         console.log("Got done in Main")
         this.chartGap5050Data.datasets[0].data = [20, 80]
+        this.$refs.chartGap5050.update()
         this.isRunning = false
       },
       progress(cycle) {
