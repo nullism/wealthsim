@@ -7,7 +7,7 @@
         <br> Poorest Person: ${{getPoorestWealth()}}
         <br> Richest Person: ${{getRichestWealth()}}
         <v-layout row wrap>
-          <v-flex xs12 md4 lg3>
+          <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Gap</h3>
             <pie-chart :chart-data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
           </v-flex>
