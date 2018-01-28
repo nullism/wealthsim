@@ -17,8 +17,10 @@
           </v-card-text>
 
           <v-card-text>
-            <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person" required></v-select>
-            The amount of money each person starts with by default.
+            <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person"
+            hint="The amount of money each person starts with by default."
+            persistent-hint
+            ></v-select>
           </v-card-text>
         </v-card>
       </v-expansion-panel-content>
