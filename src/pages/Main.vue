@@ -6,6 +6,7 @@
         <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
         <br> Poorest Person: ${{getPoorestWealth()}}
         <br> Richest Person: ${{getRichestWealth()}}
+        <pie-chart :data="chartGap5050Data"></pie-chart>
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
@@ -74,12 +75,11 @@
 <script>
   import Simulation from "../simulation.js"
   import * as util from "../util.js"
-  import Pie from "vue-chartjs"
+  import PieChart from "../charts/PieChart.js"
 
   export default {
     data() {
       return {
-        pie505: new Pie(),
         conf: {
           actorCount: 50,
           startWealth: 100,
@@ -113,7 +113,16 @@
           { t: "Small (5%)", v: 0.05 },
           { t: "Moderate (10%)", v: 0.1 },
           { t: "Large (25%)", v: 0.25 },
-        ]
+        ],
+        chartGap5050Data: {
+          labels: ["Bottom 50%", "Top 50%"],
+          datasets: [
+            {
+              label: "Initial",
+              data: [50, 50],
+            }
+          ]
+        }
       }
 
     },
@@ -145,7 +154,7 @@
       },
     },
     components: {
-      Pie
+      PieChart
     }
   }
 </script>
