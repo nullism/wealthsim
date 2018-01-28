@@ -87,7 +87,7 @@
           startWealth: 100,
           cycleCount: 1000,
           investPct: 0,
-          spendAmount: 1,
+          spendAmount: 5,
           companyChance: 0.01,
           redistribution: 0.0,
         },
