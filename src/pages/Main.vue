@@ -176,9 +176,9 @@
         this.chartGap5050Data = copy
 
         // Per Actor Chart
-        let copy = Object.assign({}, this.chartActorsData)
-        copy.datasets[0].data = this.sim.actors.map((a) => a.wealth)
-        this.chartActorsData = copy
+        let copy2 = Object.assign({}, this.chartActorsData)
+        copy2.datasets[0].data = this.sim.actors.map((a) => a.wealth)
+        this.chartActorsData = copy2
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
