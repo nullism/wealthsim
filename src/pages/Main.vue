@@ -8,7 +8,7 @@
         <br> Richest Person: ${{getRichestWealth()}}
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
-            <h3>Top and Bottom 50% Wealth Gap</h3>
+            <h3>Top and Bottom 50% Wealth Share</h3>
             <pie-chart :chart-data="chartGap5050Data" :options="chartOptions"></pie-chart>
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
@@ -135,7 +135,7 @@
           labels: ["Bottom 50%", "Top 50%"],
           datasets: [
             {
-              label: "Initial",
+              label: "Share of Wealth",
               data: [50, 50],
               backgroundColor: [
                 "#28f",
@@ -148,7 +148,7 @@
           labels: ["Default"],
           datasets: [
             {
-              label: "Wealth By Person",
+              label: "Wealth",
               data: [100],
               backgroundColor: "#f55",
             }
@@ -197,19 +197,15 @@
         copy = Object.assign({}, this.chartActorsData)
         copy.datasets[0].data = this.sim.actors.map((a) => a.wealth)
         copy.labels = this.sim.actors.map((a) => a.id)
-        console.log(copy.datasets[0].data)
         this.chartActorsData = copy
 
         // Richest and Poorest Person Chart
-        console.log(this.chartPRData)
         copy = Object.assign({}, this.chartPRData)
         copy.datasets[0].data = [
           this.getPoorestWealth(),
           this.getRichestWealth()
         ]
-
         this.chartPRData = copy
-        console.log(copy)
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
