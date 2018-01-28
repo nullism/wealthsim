@@ -115,11 +115,15 @@
           { t: "Large (25%)", v: 0.25 },
         ],
         chartGap5050Data: {
-          labels: ["Bottom 50%", "Top 50%"],
+          labels: ["Bottom 90%", "Top 10%"],
           datasets: [
             {
               label: "Initial",
               data: [90, 10],
+              backgroundColor: [
+                "#aaaaff",
+                "#ffcccc",
+              ]
             }
           ]
         }
