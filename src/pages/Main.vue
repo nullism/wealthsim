@@ -160,7 +160,7 @@
             {
               label: "Wealth",
               data: [100, 100],
-              backgroundColor: "#f55",
+              backgroundColor: ["#28f", "#f55"],
             }
           ]
         },
