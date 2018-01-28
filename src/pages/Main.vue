@@ -3,8 +3,9 @@
     <v-card>
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
-        Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
-        <br> Poorest Person: ${{getPoorestWealth()}} Richest Person: ${{getRichestWealth()}}
+        <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
+        <br> Poorest Person: ${{getPoorestWealth()}}
+        <br> Richest Person: ${{getRichestWealth()}}
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
@@ -45,14 +46,14 @@
             <v-card-text>
               <v-select v-bind:items="investPctItems"
                 item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
-                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of other people. Only works if Investment Percent is greater than zero."
+                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of a random person. Only works if Investment Percent is greater than zero."
                 persistent-hint></v-select>
             </v-card-text>
 
             <v-card-text>
               <v-select v-bind:items="cycleItems"
                 item-value="v" item-text="t" v-model="conf.cycleCount" label="Cycles"
-                hint="This is the number of cycles to simulate. Higher values will take significantly longer but provide a larger sample."
+                hint="This is the number of cycles to simulate. Higher values will take significantly longer but provide a larger sample size."
                 persistent-hint></v-select>
             </v-card-text>
 
