@@ -45,7 +45,7 @@
             <v-card-text>
               <v-select v-bind:items="investPctItems"
                 item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
-                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of other people."
+                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of other people. Only works if Investment Percent is greater than zero."
                 persistent-hint></v-select>
             </v-card-text>
 
