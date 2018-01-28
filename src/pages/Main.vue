@@ -22,6 +22,12 @@
               hint="The amount of money each person starts with by default."
               persistent-hint></v-select>
           </v-card-text>
+
+          <v-card-text>
+              <v-select v-bind:items="[1, 2, 5, 10]" v-model="conf.spendAmount" label="Spending Per Person"
+                hint="The amount of money each person spends per cycle."
+                persistent-hint></v-select>
+            </v-card-text>
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
