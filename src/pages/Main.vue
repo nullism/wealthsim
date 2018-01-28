@@ -68,7 +68,7 @@
           cycleCount: 10000,
           investPct: 0,
           spendAmount: 1,
-          companyChance: 0.0,
+          companyChance: 0.01,
           redistribution: 0.0,
         },
         sim: {},
@@ -99,7 +99,8 @@
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
-          return util.precisionRound(this.sim.actors[this.sim.actors.length - 1].wealth, 2)
+          return util.precisionRound(
+            this.sim.actors[this.sim.actors.length - 1].wealth, 2)
         }
         return 0
       },
