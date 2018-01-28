@@ -31,6 +31,20 @@
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
+    <v-expansion-panel expand>
+        <v-expansion-panel-content>
+          <div slot="header"><b>Advanced Settings</b></div>
+          <v-card>
+            <v-card-text>
+              <v-select v-bind:items="investPctItems"
+                item-value="v" item-text="t" v-model="conf.investPct" label="Investment Percent"
+                hint="This is the percentage of wealth that can be used to buy a share. Share price is dynamic and increases based on how many shares remain."
+                persistent-hint></v-select>
+            </v-card-text>
+
+          </v-card>
+        </v-expansion-panel-content>
+      </v-expansion-panel>
   </div>
 </template>
 
@@ -43,7 +57,7 @@
           actorCount: 100,
           startWealth: 100,
           cycleCount: 10000,
-          investPct: 0.0,
+          investPct: 0,
           spendAmount: 1,
           companyChance: 0.0,
           redistribution: 0.0,
@@ -51,6 +65,13 @@
         sim: {},
         cyclesDone: 0,
         isRunning: false,
+        investPctItems: [
+          { t: "Off", v: 0 },
+          { t: "Tiny (1%)", v: 0.01 },
+          { t: "Small (10%)", v: 0.1 },
+          { t: "Moderate (25%)", v: 0.25 },
+          { t: "Large (50%)", v: 0.5 },
+        ]
       }
 
     },
