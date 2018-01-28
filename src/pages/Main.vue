@@ -143,12 +143,13 @@
       },
       done() {
         console.log("Got done in Main")
+        let copy = this.chartGap5050Data.update({})
 
-        this.chartGap5050Data.datasets[0].data = [
+        copy.datasets[0].data = [
           this.sim.getBottomWealth(0.5),
           this.sim.getTopWealth(0.5),
         ]
-        this.$refs.chartGap5050.update()
+        this.chartGap5050Data = copy
         this.isRunning = false
       },
       progress(cycle) {
