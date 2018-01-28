@@ -84,8 +84,11 @@
 <script>
   import Simulation from "../simulation.js"
   import * as util from "../util.js"
-  import PieChart from "../charts/PieChart.js"
+  // Charts
+  import BarChart from "../charts/BarChart.js"
   import LineChart from "../charts/LineChart.js"
+  import PieChart from "../charts/PieChart.js"
+
 
   export default {
     data() {
