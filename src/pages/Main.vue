@@ -167,12 +167,18 @@
         this.cyclesDone = cycle
       },
       updateCharts() {
+        // 50:50 Pie Chart
         let copy = Object.assign({}, this.chartGap5050Data)
         copy.datasets[0].data = [
           this.sim.getBottomWealth(0.5),
           this.sim.getTopWealth(0.5),
         ]
         this.chartGap5050Data = copy
+
+        // Per Actor Chart
+        let copy = Object.assign({}, this.chartActorsData)
+        copy.datasets[0].data = this.sim.actors.map((a) => a.wealth)
+        this.chartActorsData = copy
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
