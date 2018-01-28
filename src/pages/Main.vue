@@ -52,7 +52,7 @@
             <v-card-text>
               <v-select v-bind:items="cycleItems"
                 item-value="v" item-text="t" v-model="conf.cycleCount" label="Cycles"
-                hint="This is the number of cycles to simulation. Higher values will take significantly longer."
+                hint="This is the number of cycles to simulate. Higher values will take significantly longer but provide a larger sample."
                 persistent-hint></v-select>
             </v-card-text>
 
