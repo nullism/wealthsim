@@ -42,6 +42,13 @@
                 persistent-hint></v-select>
             </v-card-text>
 
+            <v-card-text>
+              <v-select v-bind:items="investPctItems"
+                item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
+                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of other people."
+                persistent-hint></v-select>
+            </v-card-text>
+
           </v-card>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -54,7 +61,7 @@
     data() {
       return {
         conf: {
-          actorCount: 100,
+          actorCount: 50,
           startWealth: 100,
           cycleCount: 10000,
           investPct: 0,
@@ -71,7 +78,7 @@
           { t: "Small (10%)", v: 0.1 },
           { t: "Moderate (25%)", v: 0.25 },
           { t: "Large (50%)", v: 0.5 },
-        ]
+        ],
       }
 
     },
