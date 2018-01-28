@@ -3,27 +3,21 @@
     <v-card>
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
-        Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}<br>
-        Poorest Person: ${{getPoorestWealth()}}
-        Richest Person: ${{getRichestWealth()}}
+        Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
+        <br> Poorest Person: ${{getPoorestWealth()}} Richest Person: ${{getRichestWealth()}}
       </v-card-text>
     </v-card>
     <v-expansion-panel expand>
       <v-expansion-panel-content>
         <div slot="header">Basic Settings</div>
         <v-card>
-          <v-subheader>Number of People</v-subheader>
-            <v-slider v-model="conf.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
-            This determines the number of people participating in the simulated economy. More people takes longer to simulate.
-          <v-subheader>Wealth Per Person</v-subheader>
           <v-card-text>
-              <v-select
-              v-bind:items="[10, 50, 100, 200]"
-              v-model="conf.startWealth"
-              label="Wealth Per Person"
-              required
-            ></v-select>
-            <v-slider v-model="conf.startWealth" thumb-label step="10" min="10" max="200" ticks></v-slider>
+            <v-select v-bind:items="[10, 25, 50, 75, 100]" v-model="conf.actorCount" label="Number of People" required></v-select>
+            This determines the number of people participating in the simulated economy. More people takes longer to simulate.
+          </v-card-text>
+
+          <v-card-text>
+            <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person" required></v-select>
             The amount of money each person starts with by default.
           </v-card-text>
         </v-card>
@@ -67,7 +61,7 @@
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
-          return this.sim.actors[this.sim.actors.length-1].wealth
+          return this.sim.actors[this.sim.actors.length - 1].wealth
         }
         return 0
       },
