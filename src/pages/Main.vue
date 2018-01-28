@@ -38,11 +38,11 @@
           <v-card>
 
             <v-card-text>
-                <v-select v-bind:items="investPctItems"
-                  item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
-                  hint="The percentage of each person's wealth that is redistributed among all people each cycle."
-                  persistent-hint></v-select>
-              </v-card-text>
+              <v-select v-bind:items="investPctItems"
+                item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
+                hint="The percentage of each person's wealth that is redistributed among all people each cycle."
+                persistent-hint></v-select>
+            </v-card-text>
 
             <v-card-text>
               <v-select v-bind:items="investPctItems"
@@ -104,6 +104,13 @@
           { t: "10,000", v: 10000 },
           { t: "50,000", v: 50000 },
           { t: "100,000", v: 100000 },
+        ],
+        redistributionItems: [
+          { t: "Off", v: 0 },
+          { t: "Tiny (1%)", v: 0.01 },
+          { t: "Small (5%)", v: 0.05 },
+          { t: "Moderate (10%)", v: 0.1 },
+          { t: "Large (25%)", v: 0.25 },
         ]
       }
 
