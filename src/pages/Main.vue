@@ -141,7 +141,7 @@
           datasets: [
             {
               label: "Wealth By Person",
-              data: null,
+              data: [1,1,1,1,1,1],
               backgroundColor: "#f55",
             }
           ]
