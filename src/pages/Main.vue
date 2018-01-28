@@ -178,8 +178,8 @@
       },
       done() {
         console.log("Got done in Main")
-        this.updateCharts()
         this.isRunning = false
+        this.updateCharts()
       },
       progress(cycle) {
         this.cyclesDone = cycle
