@@ -13,7 +13,7 @@
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Wealth By Person</h3>
-            <line-chart :chart-data="chartActorData" :options="chartOptions"></line-chart>
+            <line-chart :chart-data="chartActorsData" :options="chartOptions"></line-chart>
           </v-flex>
         </v-layout>
       </v-card-text>
