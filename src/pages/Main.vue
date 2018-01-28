@@ -114,7 +114,7 @@
         sim: {},
         cyclesDone: 0,
         isRunning: false,
-        runProgress: 100,
+        runProgress: 0,
         investPctItems: [
           { t: "Off", v: 0 },
           { t: "Tiny (1%)", v: 0.01 },
@@ -191,12 +191,11 @@
         this.sim = new Simulation(this.conf, this.done, this.progress)
         this.sim.start()
         this.isRunning = true
-        this.runProgress = 0
-
       },
       done() {
         console.log("Got done in Main")
         this.isRunning = false
+        this.runProgress = 0
         this.updateCharts()
       },
       progress(cycle) {
