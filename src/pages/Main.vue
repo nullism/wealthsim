@@ -7,7 +7,7 @@
         <br> Poorest Person: ${{getPoorestWealth()}}
         <br> Richest Person: ${{getRichestWealth()}}
         <div style="max-width: 400px">
-          <pie-chart :data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
+          <pie-chart :chart-data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
         </div>
       </v-card-text>
     </v-card>
