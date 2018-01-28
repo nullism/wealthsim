@@ -49,6 +49,13 @@
                 persistent-hint></v-select>
             </v-card-text>
 
+            <v-card-text>
+              <v-select v-bind:items="cycleItems"
+                item-value="v" item-text="t" v-model="conf.cycleCount" label="Cycles"
+                hint="This is the number of cycles to simulation. Higher values will take significantly longer."
+                persistent-hint></v-select>
+            </v-card-text>
+
           </v-card>
         </v-expansion-panel-content>
       </v-expansion-panel>
@@ -81,6 +88,13 @@
           { t: "Moderate (25%)", v: 0.25 },
           { t: "Large (50%)", v: 0.5 },
         ],
+        cycleItems: [
+          { t: "1,000", v: 1000 },
+          { t: "5,000", v: 5000 },
+          { t: "10,000", v: 10000 },
+          { t: "50,000", v: 50000 },
+          { t: "100,000", v: 100000 },
+        ]
       }
 
     },
