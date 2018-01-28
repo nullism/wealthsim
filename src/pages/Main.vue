@@ -4,7 +4,7 @@
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
         <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
-        <v-progress-linear v-model="runProgress"></v-progress-linear>
+        <v-progress-linear v-model="runProgress"> {{ cyclesDone }} </v-progress-linear>
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Share</h3>
