@@ -143,17 +143,19 @@
       },
       done() {
         console.log("Got done in Main")
+        this.updateCharts()
+        this.isRunning = false
+      },
+      progress(cycle) {
+        this.cyclesDone = cycle
+      },
+      updateCharts() {
         let copy = Object.assign({}, this.chartGap5050Data)
-
         copy.datasets[0].data = [
           this.sim.getBottomWealth(0.5),
           this.sim.getTopWealth(0.5),
         ]
         this.chartGap5050Data = copy
-        this.isRunning = false
-      },
-      progress(cycle) {
-        this.cyclesDone = cycle
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
