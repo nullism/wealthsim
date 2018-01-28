@@ -2,7 +2,6 @@ var path = require("path");
 module.exports = [
   {
     entry: ["babel-polyfill", "./src/app.js"],
-    styles: ["./node_modules/vuetify/dist/vuetify.min.css"],
     output: {
       path: path.join(__dirname, "dist", "js"),
       filename: "app-bundle.js",
