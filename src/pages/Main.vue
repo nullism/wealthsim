@@ -87,7 +87,7 @@
           startWealth: 100,
           cycleCount: 1000,
           investPct: 0,
-          spendAmount: 5,
+          spendAmount: 2,
           companyChance: 0.01,
           redistribution: 0.0,
         },
@@ -123,8 +123,8 @@
               label: "Initial",
               data: [50, 50],
               backgroundColor: [
-                "#2af",
-                "#faa",
+                "#2bf",
+                "#f55",
               ]
             }
           ]
