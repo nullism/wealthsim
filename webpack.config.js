@@ -24,6 +24,10 @@ module.exports = [
               js: "babel-loader?presets[]=env",
             }
           }
+        },
+        {
+          test: /\.css$/,
+          loader: "css-loader",
         }
       ]
     },
