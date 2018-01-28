@@ -97,7 +97,7 @@ export default class Simulation {
 
     // Pay dividends
     if (this.boughtShares > 0) {
-      let sharePct = actor.shares / boughtShares;
+      let sharePct = actor.shares / this.boughtShares;
       if (sharePct > 0) {
         let earned = this.investmentPool * sharePct;
         actor.wealth += earned;
