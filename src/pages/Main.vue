@@ -38,7 +38,7 @@
           <v-card>
 
             <v-card-text>
-              <v-select v-bind:items="investPctItems"
+              <v-select v-bind:items="redistributionItems"
                 item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
                 hint="The percentage of each person's wealth that is redistributed among all people each cycle."
                 persistent-hint></v-select>
