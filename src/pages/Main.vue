@@ -119,7 +119,7 @@
           datasets: [
             {
               label: "Initial",
-              data: [50, 50],
+              data: [90, 10],
             }
           ]
         }
@@ -136,8 +136,8 @@
         console.log("Got done in Main")
 
         this.chartGap5050Data.datasets[0].data = [
-          this.sim.getBottomWealth(0.5),
-          this.sim.getTopWealth(0.5),
+          this.sim.getBottomWealth(0.9),
+          this.sim.getTopWealth(0.1),
         ]
         this.$refs.chartGap5050.update()
         this.isRunning = false
