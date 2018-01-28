@@ -145,6 +145,7 @@
       },
     },
     components: {
+      Pie
     }
   }
 </script>
