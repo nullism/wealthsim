@@ -13,15 +13,11 @@
         <div slot="header">Basic Settings</div>
         <v-card>
           <v-subheader>Number of People</v-subheader>
-          <v-card-text>
             <v-slider v-model="conf.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
             This determines the number of people participating in the simulated economy. More people takes longer to simulate.
-          </v-card-text>
           <v-subheader>Wealth Per Person</v-subheader>
-          <v-card-text>
             <v-slider v-model="conf.startWealth" thumb-label step="10" min="10" max="200" ticks></v-slider>
             The amount of money each person starts with by default.
-          </v-card-text>
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
