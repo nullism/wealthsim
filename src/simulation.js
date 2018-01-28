@@ -152,7 +152,7 @@ export default class Simulation {
     for (let i = 0; i < count; i++) {
       wealth += this.actors[i].wealth
     }
-    return wealth
+    return util.precisionRound(wealth, 2)
   }
 
   // Gets the top n% total wealth
@@ -162,7 +162,7 @@ export default class Simulation {
     for (let i = this.actors.length-1; i > this.actors.length - 1 - count; i--) {
       wealth += this.actors[i].wealth
     }
-    return wealth
+    return util.precisionRound(wealth, 2)
   }
 
 }
