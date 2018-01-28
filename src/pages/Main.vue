@@ -9,7 +9,11 @@
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Gap</h3>
-            <pie-chart :chart-data="chartGap5050Data" ref="chartGap5050" :options="chartOptions"></pie-chart>
+            <pie-chart :chart-data="chartGap5050Data" :options="chartOptions"></pie-chart>
+          </v-flex>
+          <v-flex xs12 sm6 md4 lg3>
+            <h3>Wealth By Person</h3>
+            <line-chart :chart-data="chartActorData" :options="chartOptions"></pie-chart>
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -81,6 +85,7 @@
   import Simulation from "../simulation.js"
   import * as util from "../util.js"
   import PieChart from "../charts/PieChart.js"
+  import LineChart from "../charts/LineChart.js"
 
   export default {
     data() {
@@ -132,6 +137,15 @@
             }
           ]
         },
+        chartActorsData: {
+          datasets: [
+            {
+              label: "Wealth By Person",
+              data: [100],
+              backgroundColor: "#f55",
+            }
+          ]
+        },
         chartOptions: {
           responsive: true,
         },
@@ -175,7 +189,8 @@
       },
     },
     components: {
-      PieChart
+      PieChart,
+      LineChart
     }
   }
 </script>
