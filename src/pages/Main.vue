@@ -3,8 +3,10 @@
     <v-card>
       <v-card-text>
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
-        <br> Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
-        <v-progress-linear v-model="runProgress"> {{ cyclesDone }} </v-progress-linear>
+
+        <v-progress-linear v-model="runProgress"></v-progress-linear>
+        Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
+
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Share</h3>
@@ -189,6 +191,8 @@
         this.sim = new Simulation(this.conf, this.done, this.progress)
         this.sim.start()
         this.isRunning = true
+        this.runProgress = 0
+
       },
       done() {
         console.log("Got done in Main")
@@ -197,6 +201,7 @@
       },
       progress(cycle) {
         this.cyclesDone = cycle
+        this.runProgress = (cycle / this.conf.cycleCount) * 100
       },
       updateCharts() {
         // 50:50 Pie Chart
