@@ -1,3 +1,5 @@
+import * as utils from "utils.js"
+
 export default class Simulation {
   constructor(conf, onComplete, onProgress) {
     this.conf = conf
@@ -35,6 +37,9 @@ export default class Simulation {
 
   done() {
     console.log("Done")
+    for (let actor of this.actors) {
+      actor.wealth = utils.precisionRound(actor.wealth, 2)
+    }
     this.actors.sort((a, b) => a.wealth - b.wealth)
     this.isRunning = false
     console.log(this.actors)
