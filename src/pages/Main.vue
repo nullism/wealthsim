@@ -123,7 +123,7 @@
               label: "Initial",
               data: [50, 50],
               backgroundColor: [
-                "#2bf",
+                "#28f",
                 "#f55",
               ]
             }
