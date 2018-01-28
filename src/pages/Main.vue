@@ -57,7 +57,7 @@
 
 <script>
   import Simulation from "../simulation.js"
-  import precisionRound from "../util.js"
+  import * as util from "../util.js"
 
   export default {
     data() {
@@ -99,13 +99,13 @@
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
-          return precisionRound(this.sim.actors[this.sim.actors.length - 1].wealth, 2)
+          return util.precisionRound(this.sim.actors[this.sim.actors.length - 1].wealth, 2)
         }
         return 0
       },
       getPoorestWealth() {
         if (this.sim.actors && !this.isRunning) {
-          return precisionRound(this.sim.actors[0].wealth, 2)
+          return util.precisionRound(this.sim.actors[0].wealth, 2)
         }
         return 0
       },
