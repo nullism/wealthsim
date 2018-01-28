@@ -178,6 +178,7 @@
         // Per Actor Chart
         let copy2 = Object.assign({}, this.chartActorsData)
         copy2.datasets[0].data = this.sim.actors.map((a) => a.wealth)
+        console.log(copy2.datasets[0].data)
         this.chartActorsData = copy2
       },
       getRichestWealth() {
