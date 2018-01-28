@@ -140,10 +140,21 @@ export default class Simulation {
     }
   }
 
+  // Gets the bottom n% total wealth
   getBottomWealth(pct) {
     let count = Math.round(this.actors.length * pct)
     let wealth = 0
     for (let i = 0; i < count; i++) {
+      wealth += this.actors[i].wealth
+    }
+    return wealth
+  }
+
+  // Gets the top n% total wealth
+  getTopWealth(pct) {
+    let count = Math.round(this.actors.length * pct)
+    let wealth = 0
+    for (let i = this.actors.length-1; i > this.actors.length - 1 - count; i--) {
       wealth += this.actors[i].wealth
     }
     return wealth
