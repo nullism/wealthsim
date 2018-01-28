@@ -201,8 +201,9 @@
       },
     },
     components: {
+      BarChart,
+      LineChart,
       PieChart,
-      LineChart
     }
   }
 </script>
