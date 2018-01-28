@@ -13,7 +13,7 @@
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Wealth By Person</h3>
-            <line-chart :chart-data="chartActorsData" :options="chartOptions"></line-chart>
+            <bar-chart :chart-data="chartActorsData" :options="chartOptions"></bar-chart>
           </v-flex>
         </v-layout>
       </v-card-text>
@@ -141,11 +141,11 @@
           ]
         },
         chartActorsData: {
-          labels: [],
+          labels: ["Default"],
           datasets: [
             {
               label: "Wealth By Person",
-              data: [1,1,1,1,1,1],
+              data: [100],
               backgroundColor: "#f55",
             }
           ]
