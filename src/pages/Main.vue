@@ -206,7 +206,9 @@
           this.getPoorestWealth(),
           this.getRichestWealth()
         ]
+
         this.chartPoorestRichestData = copy
+        console.log(copy)
       },
       getRichestWealth() {
         if (this.sim.actors && !this.isRunning) {
