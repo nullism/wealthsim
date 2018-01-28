@@ -134,7 +134,11 @@
       },
       done() {
         console.log("Got done in Main")
-        this.chartGap5050Data.datasets[0].data = [20, 80]
+
+        this.chartGap5050Data.datasets[0].data = [
+          this.sim.getBottomWealth(0.5),
+          80
+        ]
         this.$refs.chartGap5050.update()
         this.isRunning = false
       },

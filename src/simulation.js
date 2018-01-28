@@ -140,4 +140,13 @@ export default class Simulation {
     }
   }
 
+  getBottomWealth(pct) {
+    let count = Math.round(this.actors.length * pct)
+    let wealth = 0
+    for (let i = 0; i < count; i++) {
+      wealth += this.actors[i].wealth
+    }
+    return wealth
+  }
+
 }
