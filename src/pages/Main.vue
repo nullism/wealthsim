@@ -16,8 +16,16 @@
             <v-slider v-model="conf.actorCount" thumb-label step="10" min="50" max="200" ticks></v-slider>
             This determines the number of people participating in the simulated economy. More people takes longer to simulate.
           <v-subheader>Wealth Per Person</v-subheader>
+          <v-card-text>
+              <v-select
+              v-bind:items="[10, 50, 100, 200]"
+              v-model="conf.startWealth"
+              label="Wealth Per Person"
+              required
+            ></v-select>
             <v-slider v-model="conf.startWealth" thumb-label step="10" min="10" max="200" ticks></v-slider>
             The amount of money each person starts with by default.
+          </v-card-text>
         </v-card>
       </v-expansion-panel-content>
     </v-expansion-panel>
