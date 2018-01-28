@@ -57,6 +57,8 @@
 
 <script>
   import Simulation from "../simulation.js"
+  import precisionRound from "../util.js"
+
   export default {
     data() {
       return {
