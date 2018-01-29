@@ -14,6 +14,7 @@
               Has a <b>{{conf.companyChance * 100}}%</b> chance to spend <b>${{conf.spendAmount}}</b> on goods from a company,
                 which manifests as dividends for shareholders;
             </template>
+            Collects dividends on their company shares based on the percentage of total shares they own;
           </template>
 
           <template v-if="conf.redistribution > 0">
