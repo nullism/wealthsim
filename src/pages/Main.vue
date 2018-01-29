@@ -4,28 +4,31 @@
       <v-card-text class="text-xs-center">
         <p class="display-2">Wealth Gap Simulator</p>
         <p>
-          This simulates {{conf.actorCount}} people in a closed, limited, virtual economy.
-          As configured, each cycle over the course of {{conf.cycleCount}} cycles, each person performs the following tasks:
+          This simulates <b>{{conf.actorCount}}</b> people in a closed, limited, virtual economy.
+          As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, each person performs the following tasks:
           Selects another random person and "buys" services from them for <b>${{conf.spendAmount}}</b>;
+
           <template v-if="conf.investPct > 0">
             Invests <b>{{conf.investPct * 100}}%</b> of their income on buying a company share, if shares are available and they can afford them;
-            Has a <b>{{conf.companyChance * 100}}%</b> chance to spend <b>${{conf.spendAmount}}</b> on goods from a company,
-              which manifests as dividends for shareholders;
+            <template v-if="conf.companyChance > 0">
+              Has a <b>{{conf.companyChance * 100}}%</b> chance to spend <b>${{conf.spendAmount}}</b> on goods from a company,
+                which manifests as dividends for shareholders;
+            </template>
           </template>
 
           <template v-if="conf.redistribution > 0">
             Gives <b>{{conf.redistribution * 100}}%</b> of their income to the wealth redistribution pool;
             Receives <b>1/{{conf.actorCount}}<sup>th</sup></b> of the wealth redistribution pool;
           </template>
-
         </p>
-        <p>
 
+        <p>
           All people start with the same wealth, have the same skills or education, are equally motivated,
           and follow the same rules.
-
-          The results may suggest that wealth gaps can develop naturally in a perfectly controlled, perfectly equal
-          environment through nothing more than "luck."
+        </p>
+        <p>
+          The results <em>may</em> suggest that wealth gaps can develop naturally in a perfectly controlled, perfectly equal
+          environment through nothing more than "luck" (random chance).
         </p>
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
