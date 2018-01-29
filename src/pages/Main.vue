@@ -136,9 +136,9 @@
         conf: {
           actorCount: 100,
           startWealth: 100,
-          cycleCount: 2000,
+          cycleCount: 3000,
           investPct: 0,
-          spendAmount: 2,
+          spendAmount: 1,
           companyChance: 0.01,
           redistribution: 0.0,
         },
@@ -162,8 +162,10 @@
         cycleItems: [
           { t: "1,000", v: 1000 },
           { t: "2,000", v: 2000 },
+          { t: "3,000", v: 3000 },
           { t: "5,000", v: 5000 },
           { t: "10,000", v: 10000 },
+          { t: "25,000", v: 25000 },
           { t: "50,000", v: 50000 },
           { t: "100,000", v: 100000 },
         ],
