@@ -182,7 +182,11 @@
         },
         barChartOptions: {
           responsive: true,
-          ticks: { beginAtZero: true },
+          scales: {
+            yAxes: [{
+              ticks: { beginAtZero: true },
+            }]
+          }
         },
         chartOptions: {
           responsive: true,
