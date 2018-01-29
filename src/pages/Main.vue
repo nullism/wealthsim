@@ -197,7 +197,11 @@
         },
         barChartOptions: {
           responsive: true,
-          defaultFontColor: "#eeeeee",
+          legend: {
+            labels: {
+              fontColor: "#eee"
+            }
+          },
           scales: {
             yAxes: [{
               ticks: { beginAtZero: true },
