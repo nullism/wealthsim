@@ -64,7 +64,7 @@ export default class Simulation {
     }
     setTimeout(() => {
       this.doCycleTimeout(n+10)
-    }, 2)
+    }, 1)
   }
 
   doCycle(n) {
