@@ -7,19 +7,7 @@
           This simulates <b>{{conf.actorCount}}</b> people, each starting with <b>${{conf.startWealth}}</b> in a closed virtual economy.
 
 
-          <template v-if="conf.investPct > 0">
-            Invests <b>{{conf.investPct * 100}}%</b> of their income on buying a company share, if shares are available and they can afford them;
-            <template v-if="conf.companyChance > 0">
-              Has a <b>{{conf.companyChance * 100}}%</b> chance to spend <b>${{conf.spendAmount}}</b> on goods from a company,
-                which manifests as dividends for shareholders;
-            </template>
-            Collects dividends on their company shares based on the percentage of total shares they own;
-          </template>
 
-          <template v-if="conf.redistribution > 0">
-            Gives <b>{{conf.redistribution * 100}}%</b> of their income to the wealth redistribution pool;
-            Receives <b>1/{{conf.actorCount}}<sup>th</sup></b> of the wealth redistribution pool;
-          </template>
         </p>
 
         <p>
@@ -37,6 +25,20 @@
         <p>
           As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, <b>each person</b> performs the following tasks:
           Selects another random person and "buys" services from them for <b>${{conf.spendAmount}}</b>;
+
+          <template v-if="conf.investPct > 0">
+            Invests <b>{{conf.investPct * 100}}%</b> of their income on buying a company share, if shares are available and they can afford them;
+            <template v-if="conf.companyChance > 0">
+              Has a <b>{{conf.companyChance * 100}}%</b> chance to spend <b>${{conf.spendAmount}}</b> on goods from a company,
+                which manifests as dividends for shareholders;
+            </template>
+            Collects dividends on their company shares based on the percentage of total shares they own;
+          </template>
+
+          <template v-if="conf.redistribution > 0">
+            Gives <b>{{conf.redistribution * 100}}%</b> of their income to the wealth redistribution pool;
+            Receives <b>1/{{conf.actorCount}}<sup>th</sup></b> of the wealth redistribution pool;
+          </template>
         </p>
 
         <v-layout row wrap>
