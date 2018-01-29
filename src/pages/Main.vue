@@ -136,7 +136,7 @@
         conf: {
           actorCount: 50,
           startWealth: 100,
-          cycleCount: 1000,
+          cycleCount: 2000,
           investPct: 0,
           spendAmount: 2,
           companyChance: 0.01,
