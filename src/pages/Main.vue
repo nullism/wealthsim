@@ -1,11 +1,16 @@
 <template>
   <div>
     <v-card>
-      <v-card-text>
+      <v-card-text class="text-xs-center">
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
 
         <v-progress-linear v-model="runProgress"></v-progress-linear>
         Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}
+      </v-card-text>
+    </v-card>
+    <v-card>
+      <v-card-text>
+
 
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
