@@ -48,6 +48,7 @@ export default class Simulation {
     }
   }
 
+  // This added timeout helps lower-end CPUs cope
   doCycleTimeout(n) {
 
     for (let i = 0; i < 10; i++) {
