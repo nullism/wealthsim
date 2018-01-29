@@ -21,7 +21,7 @@
         <div slot="header"><b>Basic Settings</b></div>
         <v-card>
           <v-card-text>
-            <v-select v-bind:items="[10, 25, 50, 75, 100]" v-model="conf.actorCount" label="Number of People"
+            <v-select v-bind:items="[10, 25, 50, 75, 100, 200]" v-model="conf.actorCount" label="Number of People"
               hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate."
               persistent-hint></v-select>
           </v-card-text>
@@ -134,7 +134,7 @@
     data() {
       return {
         conf: {
-          actorCount: 50,
+          actorCount: 100,
           startWealth: 100,
           cycleCount: 2000,
           investPct: 0,
