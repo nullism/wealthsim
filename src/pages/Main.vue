@@ -5,7 +5,7 @@
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
 
         <v-progress-linear v-model="runProgress"></v-progress-linear>
-        <span class="text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
+        <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
       </v-card-text>
     </v-card>
     <v-card>
