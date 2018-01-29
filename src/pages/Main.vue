@@ -4,8 +4,8 @@
       <v-card-text class="text-xs-center">
         <p class="display-2">Wealth Gap Simulator</p>
         <p>
-          This simulates <b>{{conf.actorCount}}</b> people in a closed, limited, virtual economy.
-          As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, each person performs the following tasks:
+          This simulates <b>{{conf.actorCount}}</b> people, each starting with <b>${{conf.startWealth}}</b> in a closed virtual economy.
+          As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, <b>each person</b> performs the following tasks:
           Selects another random person and "buys" services from them for <b>${{conf.spendAmount}}</b>;
 
           <template v-if="conf.investPct > 0">
@@ -24,7 +24,7 @@
         </p>
 
         <p>
-          All people start with the same wealth, have the same skills or education, are equally motivated,
+          All people start with the same wealth, have the same skills and education, are equally motivated,
           and follow the same rules.
         </p>
         <p>
