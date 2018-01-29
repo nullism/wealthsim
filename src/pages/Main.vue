@@ -6,7 +6,11 @@
         <p>
           This simulates {{conf.actorCount}} people spending ${{conf.spendAmount}} on
           another person who is randomly selected each cycle, over the course of {{conf.cycleCount}} cycles.
-          All people start with the same income, have the same skills or education, and follow the same rules.
+          All people start with the same wealth, have the same skills or education, are equally motivated,
+          and follow the same rules.
+
+          The results may suggest that wealth gaps can develop naturally in a perfectly controlled, perfectly equal
+          environment through nothing more than "luck."
         </p>
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
