@@ -3,6 +3,11 @@
     <v-card>
       <v-card-text class="text-xs-center">
         <p class="display-2">Wealth Gap Simulator</p>
+        <p>
+          This simulates {{conf.actorCount}} people spending {{conf.spendAmount}} on
+          a randomly chosen person <span v-if="conf.investPct > 0">or a company</span>
+          each cycle over the course of {{conf.cycleCount}} cycles.
+        </p>
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
         <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
