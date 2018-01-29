@@ -5,7 +5,7 @@
         <h1 class="display-2">Wealth Gap Simulator</h1>
         <p></p>
         <p>
-          This simulates <b>{{conf.actorCount}}</b> people, each starting with <b>${{conf.startWealth}}</b> in a closed virtual economy.
+          A simulation of <b>{{conf.actorCount}}</b> people in a closed virtual economy, each starting with <b>${{conf.startWealth}}</b>.
         </p>
         <p>
           All people start with the same wealth, have the same skills and education, are equally motivated,
