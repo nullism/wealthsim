@@ -4,8 +4,13 @@
       <v-card-text class="text-xs-center">
         <p class="display-2">Wealth Gap Simulator</p>
         <p>
-          This simulates {{conf.actorCount}} people spending ${{conf.spendAmount}} on
-          another person who is randomly selected each cycle, over the course of {{conf.cycleCount}} cycles.
+          This simulates {{conf.actorCount}} people in a closed, limited, virtual economy.
+          Each cycle, over the course of {{conf.cycleCount}} cycles, each person performs the following tasks:
+          Selects another random person and "buys" services from them for ${{conf.spendAmount}}
+          OR has a {{conf.companyBuyChance * 100}}% chance to spend that amount on goods from a company if Investing is enabled;
+        </p>
+        <p>
+
           All people start with the same wealth, have the same skills or education, are equally motivated,
           and follow the same rules.
 
@@ -85,7 +90,7 @@
             </v-card-text>
 
             <v-card-text>
-              <v-select v-bind:items="investPctItems"
+              <v-select v-bind:items="companyChanceItems"
                 item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
                 hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of a random person. Only works if Investment Percent is greater than zero."
                 persistent-hint></v-select>
@@ -131,6 +136,12 @@
         runProgress: 0,
         investPctItems: [
           { t: "Off", v: 0 },
+          { t: "Tiny (1%)", v: 0.01 },
+          { t: "Small (10%)", v: 0.1 },
+          { t: "Moderate (25%)", v: 0.25 },
+          { t: "Large (50%)", v: 0.5 },
+        ],
+        companyChanceItems: [
           { t: "Tiny (1%)", v: 0.01 },
           { t: "Small (10%)", v: 0.1 },
           { t: "Moderate (25%)", v: 0.25 },
