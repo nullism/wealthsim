@@ -148,6 +148,7 @@
             {
               label: "Share of Wealth",
               data: [50, 50],
+              borderColor: ["#14d", "#d22"],
               backgroundColor: [
                 "#28f",
                 "#f55",
