@@ -5,8 +5,7 @@
         <p class="display-2">Wealth Gap Simulator</p>
         <p>
           This simulates <b>{{conf.actorCount}}</b> people, each starting with <b>${{conf.startWealth}}</b> in a closed virtual economy.
-          As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, <b>each person</b> performs the following tasks:
-          Selects another random person and "buys" services from them for <b>${{conf.spendAmount}}</b>;
+
 
           <template v-if="conf.investPct > 0">
             Invests <b>{{conf.investPct * 100}}%</b> of their income on buying a company share, if shares are available and they can afford them;
@@ -27,10 +26,7 @@
           All people start with the same wealth, have the same skills and education, are equally motivated,
           and follow the same rules.
         </p>
-        <p>
-          The results <em>may</em> suggest that wealth gaps can develop naturally in a perfectly controlled, perfectly equal
-          environment through nothing more than "luck" (random chance).
-        </p>
+
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
         <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
@@ -38,7 +34,10 @@
     </v-card>
     <v-card flat style="background: transparent;">
       <v-card-text>
-
+        <p>
+          As configured, each cycle over the course of <b>{{conf.cycleCount}}</b> cycles, <b>each person</b> performs the following tasks:
+          Selects another random person and "buys" services from them for <b>${{conf.spendAmount}}</b>;
+        </p>
 
         <v-layout row wrap>
           <v-flex xs12 sm6 md4 lg3>
