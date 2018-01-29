@@ -9,7 +9,7 @@
       </v-card-text>
     </v-card>
     <v-card>
-      <v-card-text>
+      <v-card-text flat>
 
 
         <v-layout row wrap>
