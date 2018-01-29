@@ -182,7 +182,7 @@
         },
         barChartOptions: {
           responsive: true,
-          ticks: { min: 0 },
+          beginAtZero: true,
         },
         chartOptions: {
           responsive: true,
