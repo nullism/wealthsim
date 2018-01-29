@@ -117,66 +117,7 @@
         </v-layout>
       </v-card-text>
     </v-card>
-    <v-expansion-panel expand>
-      <v-expansion-panel-content>
-        <div slot="header"><b>Basic Settings</b></div>
-        <v-card>
-          <v-card-text>
-            <v-select v-bind:items="[10, 25, 50, 75, 100]" v-model="conf.actorCount" label="Number of People"
-              hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate."
-              persistent-hint></v-select>
-          </v-card-text>
 
-          <v-card-text>
-            <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person"
-              hint="The amount of money each person starts with by default."
-              persistent-hint></v-select>
-          </v-card-text>
-
-          <v-card-text>
-            <v-select v-bind:items="[1, 2, 5, 10]" v-model="conf.spendAmount" label="Spending Per Person Per Cycle"
-              hint="The amount of money each person spends per cycle."
-              persistent-hint></v-select>
-          </v-card-text>
-        </v-card>
-      </v-expansion-panel-content>
-    </v-expansion-panel>
-    <v-expansion-panel expand>
-        <v-expansion-panel-content>
-          <div slot="header"><b>Advanced Settings</b></div>
-          <v-card>
-
-            <v-card-text>
-              <v-select v-bind:items="redistributionItems"
-                item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
-                hint="The percentage of each person's wealth that is redistributed among all people each cycle."
-                persistent-hint></v-select>
-            </v-card-text>
-
-            <v-card-text>
-              <v-select v-bind:items="investPctItems"
-                item-value="v" item-text="t" v-model="conf.investPct" label="Investment Percent"
-                hint="This is the percentage of wealth that can be used to buy a share. Share price is dynamic and increases based on how many shares remain."
-                persistent-hint></v-select>
-            </v-card-text>
-
-            <v-card-text>
-              <v-select v-bind:items="companyChanceItems"
-                item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
-                hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of a random person. Only works if Investment Percent is greater than zero."
-                persistent-hint></v-select>
-            </v-card-text>
-
-            <v-card-text>
-              <v-select v-bind:items="cycleItems"
-                item-value="v" item-text="t" v-model="conf.cycleCount" label="Cycles"
-                hint="This is the number of cycles to simulate. Higher values will take significantly longer but provide a larger sample size."
-                persistent-hint></v-select>
-            </v-card-text>
-
-          </v-card>
-        </v-expansion-panel-content>
-      </v-expansion-panel>
   </div>
 </template>
 
