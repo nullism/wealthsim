@@ -197,7 +197,7 @@
         },
         barChartOptions: {
           responsive: true,
-          scaleFontColor: "#eeeeee",
+          defaultFontColor: "#eeeeee",
           scales: {
             yAxes: [{
               ticks: { beginAtZero: true },
