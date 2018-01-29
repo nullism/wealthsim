@@ -1,6 +1,6 @@
 <template>
   <div>
-    <v-parallax src="https://images.alphacoders.com/243/24313.jpg">
+    <v-parallax src="/img/bg.jpg">
       <v-layout column align-center justify-center>
         <h1 class="display-2">Wealth Gap Simulator</h1>
         <p></p>
