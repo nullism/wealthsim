@@ -1,7 +1,7 @@
 <template>
   <div>
     <v-card>
-      <v-card-text class="text-xs-center">
+      <v-card-text class="text-xs-center text--lighten-1">
         <v-btn color="primary" @click="start" :disabled="isRunning">Run</v-btn>
 
         <v-progress-linear v-model="runProgress"></v-progress-linear>
