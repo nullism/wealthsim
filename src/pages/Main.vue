@@ -97,7 +97,8 @@
           </template>
         </p>
 
-        <v-layout row wrap v-if="cyclesDone > 0">
+        <v-layout row wrap>
+          <h2 v-if="cyclesDone < 1">Starting Distribution</h2>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Top and Bottom 50% Wealth Share</h3>
             <pie-chart :chart-data="chartGap5050Data" :options="chartOptions"></pie-chart>
