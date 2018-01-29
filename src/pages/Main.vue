@@ -210,6 +210,11 @@
         },
         chartOptions: {
           responsive: true,
+          legend: {
+            labels: {
+              fontColor: "#eee"
+            }
+          },
         },
       }
 
