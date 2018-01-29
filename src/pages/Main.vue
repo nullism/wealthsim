@@ -14,7 +14,7 @@
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Poorest and Richest Person</h3>
-            <bar-chart :chart-data="chartPRData" :options="chartOptions"></bar-chart>
+            <bar-chart :chart-data="chartPRData" :options="barChartOptions"></bar-chart>
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Poorest and Richest 10%</h3>
@@ -179,6 +179,10 @@
               backgroundColor: ["#28f", "#f55"],
             }
           ]
+        },
+        barChartOptions: {
+          responsive: true,
+          ticks: { min: 0 },
         },
         chartOptions: {
           responsive: true,
