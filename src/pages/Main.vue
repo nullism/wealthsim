@@ -3,6 +3,7 @@
     <v-parallax src="/static/doc-images/vbanner.jpg">
       <v-layout column align-center justify-center>
         <h1 class="display-2">Wealth Gap Simulator</h1>
+        <p></p>
         <p>
           This simulates <b>{{conf.actorCount}}</b> people, each starting with <b>${{conf.startWealth}}</b> in a closed virtual economy.
         </p>
@@ -10,6 +11,9 @@
           All people start with the same wealth, have the same skills and education, are equally motivated,
           and follow the same rules.
         </p>
+        <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
+        <v-progress-linear v-model="runProgress"></v-progress-linear>
+        <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
       </v-layout>
     </v-parallax>
     <v-card>
