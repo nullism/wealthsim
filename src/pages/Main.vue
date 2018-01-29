@@ -18,7 +18,7 @@
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Poorest and Richest 10%</h3>
-            <bar-chart :chart-data="chartPR10Data" :options="chartOptions"></bar-chart>
+            <bar-chart :chart-data="chartPR10Data" :options="barChartOptions"></bar-chart>
           </v-flex>
           <v-flex xs12 sm6 md4 lg3>
             <h3>Wealth By Person</h3>
