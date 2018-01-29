@@ -8,8 +8,8 @@
         <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
       </v-card-text>
     </v-card>
-    <v-card>
-      <v-card-text flat>
+    <v-card flat>
+      <v-card-text>
 
 
         <v-layout row wrap>
