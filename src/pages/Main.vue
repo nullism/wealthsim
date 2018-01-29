@@ -8,13 +8,13 @@
           Each cycle, over the course of {{conf.cycleCount}} cycles, each person performs the following tasks:
           Selects another random person and "buys" services from them for ${{conf.spendAmount}};
           <template v-if="conf.investPct > 0">
-            Invests {{conf.investPct * 100}}% of their income on buying shares, if shares are available;
+            Invests {{conf.investPct * 100}}% of their income on buying a company share, if shares are available and they can afford them;
             Has a {{conf.companyChance * 100}}% chance to spend ${{conf.spendAmount}} on goods from a company, which manifests as dividends for shareholders;
           </template>
 
           <template v-if="conf.redistribution > 0">
             Gives {{conf.redistribution * 100}}% of their income to the wealth redistribution pool;
-            Takes 1/{{conf.actorCount}} from the redistribution pool;
+            Takes 1/{{conf.actorCount}}<sup>th</sup> from the redistribution pool;
           </template>
 
         </p>
