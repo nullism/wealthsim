@@ -12,7 +12,7 @@
           and follow the same rules.
         </p>
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
-        <v-btn href="https://github.com/nullism/wealthsim" large round><v-icon>github</v-icon></v-btn>
+        <v-btn href="https://github.com/nullism/wealthsim" large><v-icon>github</v-icon></v-btn>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
         <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
       </v-layout>
