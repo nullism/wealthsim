@@ -55,7 +55,7 @@
             <v-card-text>
               <v-select v-bind:items="investPctItems"
                 item-value="v" item-text="t" v-model="conf.investPct" label="Investment Percent"
-                hint="This is the percentage of wealth that can be used to buy a share. Share price is dynamic and increases based on how many shares remain."
+                hint="This is the percentage of wealth that can be used to buy a share. Share price is dynamic and increases based on how many shares have been bought."
                 persistent-hint></v-select>
             </v-card-text>
 
@@ -92,7 +92,7 @@
           </template>
 
           <template v-if="conf.redistribution > 0">
-            Gives <b>{{conf.redistribution * 100}}%</b> of their income to the wealth redistribution pool;
+            Gives <b>{{conf.redistribution * 100}}%</b> of their wealth to the wealth redistribution pool;
             Receives <b>1/{{conf.actorCount}}<sup>th</sup></b> of the wealth redistribution pool;
           </template>
         </p>
