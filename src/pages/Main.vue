@@ -21,7 +21,8 @@
         <div slot="header"><b>Basic Settings</b></div>
         <v-card>
           <v-card-text>
-            <v-select v-bind:items="confItems.actorCount" v-model="conf.actorCount" label="Number of People"
+            <v-select v-bind:items="confItems.actorCount"
+              item-value="v" item-text="t" v-model="conf.actorCount" label="Number of People"
               hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate."
               persistent-hint></v-select>
           </v-card-text>
