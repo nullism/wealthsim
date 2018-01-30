@@ -296,10 +296,11 @@
           let qval = this.$route.query[qkey]
           console.log(qval)
           if (!this.confItems[qkey]) continue
+          // Values may be strings, so no "==="
           let qitem = this.confItems[qkey].find((ci) => ci.v == qval)
           console.log(qitem)
           if (!qitem) continue
-          this.conf[qkey] = qval
+          this.conf[qkey] = qitem.v
         }
       },
       updateCharts() {
