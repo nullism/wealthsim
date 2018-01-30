@@ -21,7 +21,7 @@
         <div slot="header"><b>Basic Settings</b></div>
         <v-card>
           <v-card-text>
-            <v-select v-bind:items="[10, 25, 50, 75, 100, 200]" v-model="conf.actorCount" label="Number of People"
+            <v-select v-bind:items="confItems.actorCount" v-model="conf.actorCount" label="Number of People"
               hint="This determines the number of people participating in the simulated economy. More people takes longer to simulate."
               persistent-hint></v-select>
           </v-card-text>
@@ -53,7 +53,7 @@
             </v-card-text>
 
             <v-card-text>
-              <v-select v-bind:items="investPctItems"
+              <v-select v-bind:items="confItems.investPct"
                 item-value="v" item-text="t" v-model="conf.investPct" label="Investment Percent"
                 hint="This is the percentage of wealth that can be used to buy a share. Share price is dynamic and increases based on how many shares have been bought."
                 persistent-hint></v-select>
@@ -143,17 +143,27 @@
           companyChance: 0.01,
           redistribution: 0.0,
         },
+        confItems: {
+          actorCount: [
+            { t: "10", v: 10 },
+            { t: "20", v: 20 },
+            { t: "50", v: 50 },
+            { t: "75", v: 75 },
+            { t: "100", v: 100 },
+            { t: "200", v: 200 },
+          ],
+          investPct: [
+            { t: "Off", v: 0 },
+            { t: "Tiny (1%)", v: 0.01 },
+            { t: "Small (10%)", v: 0.1 },
+            { t: "Moderate (25%)", v: 0.25 },
+            { t: "Large (50%)", v: 0.5 },
+          ],
+        },
         sim: {},
         cyclesDone: 0,
         isRunning: false,
         runProgress: 0,
-        investPctItems: [
-          { t: "Off", v: 0 },
-          { t: "Tiny (1%)", v: 0.01 },
-          { t: "Small (10%)", v: 0.1 },
-          { t: "Moderate (25%)", v: 0.25 },
-          { t: "Large (50%)", v: 0.5 },
-        ],
         companyChanceItems: [
           { t: "Tiny (1%)", v: 0.01 },
           { t: "Small (10%)", v: 0.1 },
@@ -267,7 +277,8 @@
       },
       updateConfFromUrl() {
         console.log("Updating CONF from url")
-        console.log(this.$router.query)
+        console.log(this.$route.query)
+
       },
       updateCharts() {
         // 50:50 Pie Chart
