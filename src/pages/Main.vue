@@ -11,8 +11,12 @@
           All people start with the same wealth, have the same skills and education, are equally motivated,
           and follow the same rules.
         </p>
+        <v-flex xs6>
         <v-btn color="primary" @click="start" :disabled="isRunning" large round>Run</v-btn>
-        <v-btn href="https://github.com/nullism/wealthsim" large><v-icon>cloud</v-icon> Github</v-btn>
+        </v-flex>
+        <v-flex xs6>
+        <v-btn href="https://github.com/nullism/wealthsim" large><v-icon>cloud</v-icon>&nbsp; Github</v-btn>
+        </v-flex>
         <v-progress-linear v-model="runProgress"></v-progress-linear>
         <span class="grey--text text--lighten-2">Cycles Ran: {{ cyclesDone }} / {{ conf.cycleCount }}</span>
       </v-layout>
