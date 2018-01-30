@@ -290,18 +290,17 @@
         this.$router.push({ path: '/', query: this.conf})
       },
       updateConfFromUrl() {
-        console.log("Updating CONF from url")
-        console.log(this.$route.query)
+        let count = 0
         for (let qkey in this.$route.query) {
           let qval = this.$route.query[qkey]
-          console.log(qval)
           if (!this.confItems[qkey]) continue
           // Values may be strings, so no "==="
           let qitem = this.confItems[qkey].find((ci) => ci.v == qval)
-          console.log(qitem)
           if (!qitem) continue
           this.conf[qkey] = qitem.v
+          count++
         }
+        return count
       },
       updateCharts() {
         // 50:50 Pie Chart
@@ -354,7 +353,8 @@
       PieChart,
     },
     mounted() {
-      this.updateConfFromUrl()
+      let paramCount = this.updateConfFromUrl()
+      if (paramCount > 0) this.start()
     }
   }
 </script>
