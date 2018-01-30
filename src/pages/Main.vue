@@ -292,7 +292,13 @@
       updateConfFromUrl() {
         console.log("Updating CONF from url")
         console.log(this.$route.query)
-
+        for (let qkey in this.$route.query) {
+          let qval = this.$route.query[qkey]
+          if (!this.confItems[qkey]) continue
+          let qitem = this.confItems[qkey].find((ci) => ci.v === qval)
+          if (!qitem) continue
+          this.conf[qkey] = qval
+        }
       },
       updateCharts() {
         // 50:50 Pie Chart
