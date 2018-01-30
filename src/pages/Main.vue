@@ -263,9 +263,10 @@
         this.runProgress = (cycle / this.conf.cycleCount) * 100
       },
       updateUrl() {
-        console.log("Updating URL with:")
-        console.log(this.conf)
         this.$router.push({ path: '/', query: this.conf})
+      },
+      updateConfFromUrl() {
+
       },
       updateCharts() {
         // 50:50 Pie Chart
@@ -316,6 +317,9 @@
       BarChart,
       LineChart,
       PieChart,
+    },
+    mounted() {
+      this.updateConfFromUrl()
     }
   }
 </script>
