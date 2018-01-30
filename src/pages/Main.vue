@@ -266,6 +266,7 @@
         this.$router.push({ path: '/', query: this.conf})
       },
       updateConfFromUrl() {
+        console.log("Updating CONF from url")
         console.log(this.$router.query)
       },
       updateCharts() {
