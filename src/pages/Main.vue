@@ -263,7 +263,9 @@
         this.runProgress = (cycle / this.conf.cycleCount) * 100
       },
       updateUrl() {
-        router.push({ path: '/', query: conf})
+        console.log("Updating URL with:")
+        console.log(this.conf)
+        router.push({ path: '/', query: this.conf})
       },
       updateCharts() {
         // 50:50 Pie Chart
