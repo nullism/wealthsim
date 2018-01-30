@@ -276,7 +276,6 @@
         this.isRunning = true
       },
       done() {
-        console.log("Got done in Main")
         this.isRunning = false
         this.runProgress = 0
         this.updateCharts()

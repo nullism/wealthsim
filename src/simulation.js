@@ -31,19 +31,16 @@ export default class Simulation {
   }
 
   start() {
-    console.log("Starting...")
     this.isRunning = true
     this.doCycleTimeout(0)
   }
 
   done() {
-    console.log("Done")
     for (let actor of this.actors) {
       actor.wealth = util.precisionRound(actor.wealth, 2)
     }
     this.actors.sort((a, b) => a.wealth - b.wealth)
     this.isRunning = false
-    console.log(this.actors)
     if (this.onComplete) {
       this.onComplete()
     }
