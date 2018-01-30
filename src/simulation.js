@@ -1,6 +1,7 @@
 import * as util from "./util.js"
 
 export default class Simulation {
+
   constructor(conf, onComplete, onProgress) {
     this.conf = conf
     this.actors = []
@@ -52,7 +53,7 @@ export default class Simulation {
   doCycleTimeout(n) {
 
     for (let i = 0; i < 10; i++) {
-      this.doCycle(n+i)
+      this.doCycle(n + i)
     }
 
     if (n % 100 === 0) {
@@ -64,7 +65,7 @@ export default class Simulation {
       return
     }
     setTimeout(() => {
-      this.doCycleTimeout(n+10)
+      this.doCycleTimeout(n + 10)
     }, 1)
   }
 
@@ -123,7 +124,6 @@ export default class Simulation {
       // Buy something from company
       this.investmentPool += this.conf.spendAmount;
     } else {
-
       // Give to another random actor
       let actor2 = this.actors[Math.floor(Math.random() * this.actors.length)];
       actor2.wealth += this.conf.spendAmount;
@@ -160,7 +160,7 @@ export default class Simulation {
   getTopWealth(pct) {
     let count = Math.round(this.actors.length * pct)
     let wealth = 0
-    for (let i = this.actors.length-1; i > this.actors.length - 1 - count; i--) {
+    for (let i = this.actors.length - 1; i > this.actors.length - 1 - count; i--) {
       wealth += this.actors[i].wealth
     }
     return util.precisionRound(wealth, 2)
