@@ -265,7 +265,7 @@
       updateUrl() {
         console.log("Updating URL with:")
         console.log(this.conf)
-        router.push({ path: '/', query: this.conf})
+        this.$router.push({ path: '/', query: this.conf})
       },
       updateCharts() {
         // 50:50 Pie Chart
