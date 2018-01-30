@@ -12,6 +12,10 @@
   <div id="app">
     <v-app id="wealthsim" dark>
       <router-view class="view"></router-view>
+      <v-footer class="pa-3">
+        <v-spacer></v-spacer>
+        <div>© {{ new Date().getFullYear() }}</div>
+      </v-footer>
     </v-app>
   </div>
   <script type="text/javascript" src="js/app-bundle.js"></script>
