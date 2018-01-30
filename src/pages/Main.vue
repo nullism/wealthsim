@@ -28,13 +28,15 @@
           </v-card-text>
 
           <v-card-text>
-            <v-select v-bind:items="[10, 50, 100, 200]" v-model="conf.startWealth" label="Wealth Per Person"
+            <v-select v-bind:items="confItems.startWealth"
+              item-value="v" item-text="t" v-model="conf.startWealth" label="Wealth Per Person"
               hint="The amount of money each person starts with by default."
               persistent-hint></v-select>
           </v-card-text>
 
           <v-card-text>
-            <v-select v-bind:items="[1, 2, 5, 10]" v-model="conf.spendAmount" label="Spending Per Person Per Cycle"
+            <v-select v-bind:items="confItems.spendAmount"
+              item-value="v" item-text="t" v-model="conf.spendAmount" label="Spending Per Person Per Cycle"
               hint="The amount of money each person spends per cycle."
               persistent-hint></v-select>
           </v-card-text>
@@ -47,7 +49,7 @@
           <v-card>
 
             <v-card-text>
-              <v-select v-bind:items="redistributionItems"
+              <v-select v-bind:items="confItems.redistribution"
                 item-value="v" item-text="t" v-model="conf.redistribution" label="Wealth Redistribution"
                 hint="The percentage of each person's wealth that is redistributed among all people each cycle."
                 persistent-hint></v-select>
@@ -61,14 +63,14 @@
             </v-card-text>
 
             <v-card-text>
-              <v-select v-bind:items="companyChanceItems"
+              <v-select v-bind:items="confItems.companyChance"
                 item-value="v" item-text="t" v-model="conf.companyChance" label="Company Purchase Percent"
                 hint="This is the percentage of each person's spending that will go to a company (and thus shareholders) instead of a random person. Only works if Investment Percent is greater than zero."
                 persistent-hint></v-select>
             </v-card-text>
 
             <v-card-text>
-              <v-select v-bind:items="cycleItems"
+              <v-select v-bind:items="confItems.cycleCount"
                 item-value="v" item-text="t" v-model="conf.cycleCount" label="Cycles"
                 hint="This is the number of cycles to simulate. Higher values will take significantly longer but provide a larger sample size."
                 persistent-hint></v-select>
@@ -147,11 +149,21 @@
         confItems: {
           actorCount: [
             { t: "10", v: 10 },
-            { t: "20", v: 20 },
             { t: "50", v: 50 },
-            { t: "75", v: 75 },
             { t: "100", v: 100 },
             { t: "200", v: 200 },
+          ],
+          startWealth: [
+            { t: "10", v: 10 },
+            { t: "50", v: 50 },
+            { t: "100", v: 100 },
+            { t: "200", v: 200 },
+          ],
+          spendAmount: [
+            { t: "1", v: 1 },
+            { t: "2", v: 2 },
+            { t: "5", v: 5 },
+            { t: "10", v: 10 },
           ],
           investPct: [
             { t: "Off", v: 0 },
@@ -160,34 +172,35 @@
             { t: "Moderate (25%)", v: 0.25 },
             { t: "Large (50%)", v: 0.5 },
           ],
+          companyChance: [
+            { t: "Tiny (1%)", v: 0.01 },
+            { t: "Small (10%)", v: 0.1 },
+            { t: "Moderate (25%)", v: 0.25 },
+            { t: "Large (50%)", v: 0.5 },
+          ],
+          cycleCount: [
+            { t: "1,000", v: 1000 },
+            { t: "2,000", v: 2000 },
+            { t: "3,000", v: 3000 },
+            { t: "5,000", v: 5000 },
+            { t: "10,000", v: 10000 },
+            { t: "25,000", v: 25000 },
+            { t: "50,000", v: 50000 },
+            { t: "100,000", v: 100000 },
+          ],
+          redistribution: [
+            { t: "Off", v: 0 },
+            { t: "Tiny (1%)", v: 0.01 },
+            { t: "Small (5%)", v: 0.05 },
+            { t: "Moderate (10%)", v: 0.1 },
+            { t: "Large (25%)", v: 0.25 },
+          ],
         },
         sim: {},
         cyclesDone: 0,
         isRunning: false,
         runProgress: 0,
-        companyChanceItems: [
-          { t: "Tiny (1%)", v: 0.01 },
-          { t: "Small (10%)", v: 0.1 },
-          { t: "Moderate (25%)", v: 0.25 },
-          { t: "Large (50%)", v: 0.5 },
-        ],
-        cycleItems: [
-          { t: "1,000", v: 1000 },
-          { t: "2,000", v: 2000 },
-          { t: "3,000", v: 3000 },
-          { t: "5,000", v: 5000 },
-          { t: "10,000", v: 10000 },
-          { t: "25,000", v: 25000 },
-          { t: "50,000", v: 50000 },
-          { t: "100,000", v: 100000 },
-        ],
-        redistributionItems: [
-          { t: "Off", v: 0 },
-          { t: "Tiny (1%)", v: 0.01 },
-          { t: "Small (5%)", v: 0.05 },
-          { t: "Moderate (10%)", v: 0.1 },
-          { t: "Large (25%)", v: 0.25 },
-        ],
+
         chartGap5050Data: {
           labels: ["Bottom 50%", "Top 50%"],
           datasets: [
