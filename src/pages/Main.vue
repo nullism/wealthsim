@@ -266,7 +266,7 @@
         this.$router.push({ path: '/', query: this.conf})
       },
       updateConfFromUrl() {
-
+        console.log(this.$router.query)
       },
       updateCharts() {
         // 50:50 Pie Chart
